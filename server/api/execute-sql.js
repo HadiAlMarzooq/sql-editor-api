@@ -1,12 +1,18 @@
 // /api/execute-sql.js
 const sqlite3 = require('sqlite3').verbose();
 const express = require('express');
+const cors = require('cors'); // Make sure you have CORS installed (`npm install cors`)
+
 const app = express();
-const cors = require('cors');
+
+app.use(cors()); // This will enable CORS for all routes
 
 // Middleware to parse the incoming request body as JSON
 app.use(express.json());
-app.options('/api/execute-sql', cors()); // enable pre-flight request for POST request
+
+// Add a separate OPTIONS handler
+app.options('/execute-sql', cors()); // Enable pre-flight request for POST request
+
 
 // Endpoint to execute SQL query
 app.post('/execute-sql', (req, res) => {
