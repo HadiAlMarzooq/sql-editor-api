@@ -2,6 +2,7 @@
 const sqlite3 = require('sqlite3').verbose();
 const express = require('express');
 const app = express();
+const cors = require('cors');
 
 // Middleware to parse the incoming request body as JSON
 app.use(express.json());
