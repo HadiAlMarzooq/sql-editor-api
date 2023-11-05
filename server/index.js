@@ -1,7 +1,11 @@
 // index.js
 const express = require('express');
+const cors = require('cors');
 const app = express();
 const port = process.env.PORT || 3000;
+
+// Enable CORS for all routes
+app.use(cors());
 
 // Import any other routes or middleware
 app.use('/api', require('./api/execute-sql'));

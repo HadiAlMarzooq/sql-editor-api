@@ -1,21 +1,10 @@
-// File: /api/execute-sql.js
+// /api/execute-sql.js
 const sqlite3 = require('sqlite3').verbose();
 const express = require('express');
-
 const app = express();
 
 // Middleware to parse the incoming request body as JSON
 app.use(express.json());
-
-// Enable CORS for client-side
-app.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', '*'); // You should configure this appropriately for your application
-  res.header(
-    'Access-Control-Allow-Headers',
-    'Origin, X-Requested-With, Content-Type, Accept'
-  );
-  next();
-});
 
 // Endpoint to execute SQL query
 app.post('/execute-sql', (req, res) => {
