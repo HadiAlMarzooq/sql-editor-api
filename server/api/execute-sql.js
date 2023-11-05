@@ -5,6 +5,7 @@ const app = express();
 
 // Middleware to parse the incoming request body as JSON
 app.use(express.json());
+app.options('/api/execute-sql', cors()); // enable pre-flight request for POST request
 
 // Endpoint to execute SQL query
 app.post('/execute-sql', (req, res) => {
