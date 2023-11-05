@@ -38,7 +38,7 @@ app.post('/execute-sql', (req, res) => {
     if (err) {
       return res.status(400).json({ error: err.message });
     }
-    res.json({ rows });
+    return res.json({ rows });
   });
 });
 
