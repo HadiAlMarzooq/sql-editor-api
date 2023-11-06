@@ -8,6 +8,9 @@ app.use(cors());
 app.use(express.json());
 
 app.post('/api/execute-sql', (req, res) => {
+  console.log(
+  "GOTCHA"  
+  )
   const sql = req.body.sql.trim();
 
   // Connect to SQLite database
