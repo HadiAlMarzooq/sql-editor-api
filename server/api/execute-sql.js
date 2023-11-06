@@ -19,7 +19,7 @@ app.post('/execute-sql', (req, res) => {
   const sql = req.body.sql.trim();
 
   // Connect to SQLite database
-  const db = new sqlite3.Database('../database.db', sqlite3.OPEN_READONLY, (err) => {
+  const db = new sqlite3.Database('./database.db', sqlite3.OPEN_READONLY, (err) => {
     if (err) {
       console.error(err.message);
       return res.status(500).json({ error: 'Failed to connect to the database.' });
