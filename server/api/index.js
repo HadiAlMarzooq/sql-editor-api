@@ -8,7 +8,7 @@ const port = process.env.PORT || 3000;
 app.use(cors());
 
 // Import any other routes or middleware
-app.use('/api', require('./api/execute-sql'));
+app.use('/api', require('./execute-sql'));
 
 // You might have other routes here
 // ...
