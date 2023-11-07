@@ -7,9 +7,6 @@ const app = express();
 
 app.use(cors()); // This will enable CORS for all routes
 
-// Middleware to parse the incoming request body as JSON
-app.use(express.json());
-
 // Add a separate OPTIONS handler
 app.options('/execute-sql', cors()); // Enable pre-flight request for POST request
 
