@@ -11,10 +11,10 @@ app.use(cors());
 app.use(express.json());
 
 // Add a separate OPTIONS handler
-app.options('/execute-sql', cors()); // Enable pre-flight request for POST request
+app.options('/', cors()); // Enable pre-flight request for POST request
 
 // Endpoint to execute SQL query
-app.post('/execute-sql', (req, res) => {
+app.post('/', (req, res) => {
   const sql = req.body.sql.trim();
 
   // Connect to SQLite database
